@@ -6,7 +6,7 @@
 using namespace cv;
 using namespace std;
 
-const char* window_title = "Join-Robockets Clientside Software";
+string window_title = "Join-Robockets Clientside Software";
 
 int main() {
     //Initialize camera.
