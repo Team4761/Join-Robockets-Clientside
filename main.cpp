@@ -23,7 +23,7 @@ int main() {
         cap >> frame;
         imshow(window_title, frame);
 
-        //Quit if escape key has been pressed.
+        //Quit if any key has been pressed.
         if(waitKey(30) >= 0) {
             break;
         }
