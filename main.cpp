@@ -19,19 +19,23 @@ int main() {
     }
 
     Mat frame, hsv, filtered;
+    Scalar hsv_lower;
+    Scalar hsv_upper;
     namedWindow(window_title);
-    createTrackbar("Hue Lower", window_title, &h_lower, 180, NULL);
-    createTrackbar("Hue Upper", window_title, &h_upper, 180, NULL);
-    createTrackbar("Saturation Lower", window_title, &s_lower, 255, NULL);
-    createTrackbar("Saturation Upper", window_title, &s_upper, 255, NULL);
-    createTrackbar("Value Lower", window_title, &v_lower, 255, NULL);
-    createTrackbar("Value Upper", window_title, &v_upper, 255, NULL);
+    createTrackbar("Hue Lower", window_title, &h_lower, 180);
+    createTrackbar("Hue Upper", window_title, &h_upper, 180);
+    createTrackbar("Saturation Lower", window_title, &s_lower, 255);
+    createTrackbar("Saturation Upper", window_title, &s_upper, 255);
+    createTrackbar("Value Lower", window_title, &v_lower, 255);
+    createTrackbar("Value Upper", window_title, &v_upper, 255);
 
     while(1) {
         //Capture and show image.
         cap >> frame;
         cvtColor(frame, hsv, CV_BGR2HSV);
-        inRange(hsv, Scalar(h_lower, s_lower, v_lower), Scalar(h_upper, s_upper, v_upper), filtered);
+        hsv_lower = Scalar(h_lower, s_lower, v_lower);
+        hsv_upper = Scalar(h_upper, s_upper, v_upper);
+        inRange(hsv, hsv_lower, hsv_upper, filtered);
         imshow(window_title, filtered);
 
         //Quit if any key has been pressed.
