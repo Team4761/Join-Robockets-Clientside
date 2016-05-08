@@ -42,7 +42,7 @@ int main() {
     }
 
     Mat frame, hsv, filtered;
-    namedWindow(window_title);
+    namedWindow(window_title, WINDOW_NORMAL);
     createTrackbar("H Lower", window_title, &h_lower, 180, filter_callback);
     createTrackbar("H Upper", window_title, &h_upper, 180, filter_callback);
     createTrackbar("S Lower", window_title, &s_lower, 255, filter_callback);
