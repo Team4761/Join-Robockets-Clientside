@@ -22,12 +22,12 @@ int main() {
     Scalar hsv_lower;
     Scalar hsv_upper;
     namedWindow(window_title);
-    createTrackbar("Hue Lower", window_title, &h_lower, 180);
-    createTrackbar("Hue Upper", window_title, &h_upper, 180);
-    createTrackbar("Saturation Lower", window_title, &s_lower, 255);
-    createTrackbar("Saturation Upper", window_title, &s_upper, 255);
-    createTrackbar("Value Lower", window_title, &v_lower, 255);
-    createTrackbar("Value Upper", window_title, &v_upper, 255);
+    createTrackbar("H Lower", window_title, &h_lower, 180);
+    createTrackbar("H Upper", window_title, &h_upper, 180);
+    createTrackbar("S Lower", window_title, &s_lower, 255);
+    createTrackbar("S Upper", window_title, &s_upper, 255);
+    createTrackbar("V Lower", window_title, &v_lower, 255);
+    createTrackbar("V Upper", window_title, &v_upper, 255);
 
     while(1) {
         //Capture and show image.
